@@ -1,0 +1,11 @@
+<button
+  class="not-selected"
+  *ngIf="status === ''"
+  (click)="selectedBox($event)"
+></button>
+<div class="selected-x" *ngIf="status === 'X'">
+  <span>X</span>
+</div>
+<div class="selected-o" *ngIf="status === 'O'">
+  <span>O</span>
+</div>

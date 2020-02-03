@@ -1,0 +1,33 @@
+button,
+div {
+  min-height: 100px;
+  min-width: 100px;
+  width: 100%;
+  border: 2px solid grey;
+  border-radius: 4px;
+  background-color: lightgrey;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  box-sizing: border-box;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten(lightgrey, 10%);
+  }
+  &:active {
+    background-color: lightgrey;
+  }
+}
+
+div {
+  font-size: 40px;
+  &.selected-x {
+    background-color: lightgreen;
+  }
+  &.selected-o {
+    background-color: lightpink;
+  }
+}
