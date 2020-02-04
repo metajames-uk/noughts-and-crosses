@@ -10,4 +10,5 @@
 </div>
 <h2 *ngIf="winnerIsX">Winner is X</h2>
 <h2 *ngIf="winnerIsX === false">Winner is O</h2>
+<h2 *ngIf="winnerIsX === null && squares.indexOf('') === -1">It's a draw</h2>
 <button class="new-game" (click)="newGame()">New game</button>

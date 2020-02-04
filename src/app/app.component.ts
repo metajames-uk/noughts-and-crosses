@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   winnerIsX = null;
   turnIsX = true;
-  title = 'noughts-and-crosses';
   squares = ['', '', '', '', '', '', '', '', ''];
   winningCombos = [
     [0, 1, 2],
