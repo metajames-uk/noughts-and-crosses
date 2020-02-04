@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/noughts-and-crosses",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

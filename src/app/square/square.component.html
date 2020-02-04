@@ -1,7 +1,8 @@
 <button
   class="not-selected"
   *ngIf="status === ''"
-  (click)="selectedBox($event)"
+  (click)="selectedBox()"
+  [class.disabled]="finished"
 ></button>
 <div class="selected-x" *ngIf="status === 'X'">
   <span>X</span>

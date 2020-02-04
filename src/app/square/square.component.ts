@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SquareComponent implements OnInit {
   @Input() status = '';
+  @Input() finished;
   @Output() buttonSelected = new EventEmitter();
 
   constructor() {}

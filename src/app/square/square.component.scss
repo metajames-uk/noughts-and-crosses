@@ -1,6 +1,6 @@
 button,
 div {
-  min-height: 100px;
+  height: 100px;
   min-width: 100px;
   width: 100%;
   border: 2px solid grey;
@@ -9,6 +9,13 @@ div {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  outline: none;
+  box-sizing: border-box;
+  user-select: none;
+
+  &.disabled {
+    pointer-events: none;
+  }
 }
 
 button {

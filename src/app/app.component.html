@@ -1,10 +1,13 @@
 <h1>Noughts &amp; Crosses</h1>
-<button (click)="newGame()">New game</button>
 <p>Who's turn? <span *ngIf="turnIsX">X</span><span *ngIf="!turnIsX">O</span></p>
 <div class="board-container">
   <app-square
     *ngFor="let square of squares; index as i"
     [status]="square"
     (buttonSelected)="buttonSelected(i)"
+    [finished]="winnerIsX !== null"
   ></app-square>
 </div>
+<h2 *ngIf="winnerIsX">Winner is X</h2>
+<h2 *ngIf="winnerIsX === false">Winner is O</h2>
+<button class="new-game" (click)="newGame()">New game</button>
