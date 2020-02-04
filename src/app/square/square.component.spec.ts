@@ -1,25 +1,32 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 import { SquareComponent } from './square.component';
 
 describe('SquareComponent', () => {
-  let component: SquareComponent;
-  let fixture: ComponentFixture<SquareComponent>;
+  let spectator: Spectator<SquareComponent>;
+  const createComponent = createComponentFactory(SquareComponent);
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ SquareComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SquareComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach(() => (spectator = createComponent()));
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(spectator.component).toBeTruthy();
   });
+
+  describe('selectedBox', () => {
+    it('should emit buttonSelected when square is clicked', () => {
+      spyOn(spectator.component.buttonSelected, 'emit').and.callThrough();
+      spectator.click(spectator.query('button'));
+
+      expect(spectator.component.buttonSelected.emit).toHaveBeenCalled();
+    });
+  });
+
+  // it('should have a success class by default', () => {
+  //   expect(spectator.query('button')).toHaveClass('success');
+  // });
+
+  // it('should set the class name according to the [className] input', () => {
+  //   spectator.setInput('className', 'danger');
+  //   expect(spectator.query('button')).toHaveClass('danger');
+  //   expect(spectator.query('button')).not.toHaveClass('success');
+  // });
 });
